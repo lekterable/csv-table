@@ -1,4 +1,5 @@
 import React from 'react'
+import Row from './components/Row'
 
 export default ({ data }) => {
   const [header, ...rows] = [...data]
@@ -6,19 +7,11 @@ export default ({ data }) => {
   return (
     <table>
       <thead>
-        <tr>
-          {header.map((cell, index) => (
-            <td key={index}>{cell}</td>
-          ))}
-        </tr>
+        <Row header cells={header} />
       </thead>
       <tbody>
         {rows.map((row, index) => (
-          <tr key={index}>
-            {row.map((cell, index) => (
-              <td key={index}>{cell}</td>
-            ))}
-          </tr>
+          <Row key={index} cells={row} />
         ))}
       </tbody>
     </table>
