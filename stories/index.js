@@ -10,4 +10,6 @@ const exampleData = [
   ['Draco', 'Malfoy', 'Slytherin']
 ]
 
-storiesOf('Table', module).add('default', () => <Table data={exampleData} />)
+storiesOf('Table', module)
+  .add('default', () => <Table data={exampleData} />)
+  .add('editable', () => <Table data={exampleData} editable />)

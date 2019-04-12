@@ -1,11 +1,15 @@
 import React, { useContext, useState } from 'react'
-import { ContentContext } from '../contexts'
+import { ContentContext, ModeContext } from '../contexts'
 
 export default ({ header, value, rowIndex, colIndex }) => {
+  const { isEditable } = useContext(ModeContext)
   const [, dispatch] = useContext(ContentContext)
   const [content, setContent] = useState(value)
   const [editMode, setEditMode] = useState(false)
-  const toggleMode = () => setEditMode(mode => !mode)
+  const toggleMode = () => {
+    if (!isEditable) return
+    setEditMode(mode => !mode)
+  }
   const handleFocus = ref => ref && ref.focus()
   const handleChange = e => setContent(e.target.value)
   const submitContent = () => {

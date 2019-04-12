@@ -1,0 +1,1 @@
+{"version":3,"file":"main.89bd7aac06cba563d79e.bundle.js","sources":["webpack:///./.storybook/config.js"],"sourcesContent":["import { configure } from '@storybook/react'\n\nconst loadStories = () => require('../stories')\n\nconfigure(loadStories, module)\n"],"mappings":"AAAA","sourceRoot":""}
