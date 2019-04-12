@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ContentContext, ModeContext } from '../contexts'
 
 export default ({ header, value, rowIndex, colIndex }) => {
@@ -23,6 +23,10 @@ export default ({ header, value, rowIndex, colIndex }) => {
       return setContent(value)
     }
   }
+
+  useEffect(() => {
+    setContent(value)
+  }, [value])
 
   return header ? (
     <th>

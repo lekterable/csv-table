@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div>
         <h1>csv-table example</h1>
-        <Table data={exampleData} />
+        <Table data={exampleData} editable toolbar />
       </div>
     )
   }

@@ -13,3 +13,4 @@ const exampleData = [
 storiesOf('Table', module)
   .add('default', () => <Table data={exampleData} />)
   .add('editable', () => <Table data={exampleData} editable />)
+  .add('with toolbar', () => <Table data={exampleData} toolbar />)

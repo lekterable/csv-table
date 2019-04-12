@@ -1,7 +1,7 @@
 import React from 'react'
 import Cell from './Cell'
 
-export default ({ header, cells, rowIndex }) => {
+export default ({ header, cells = [], rowIndex }) => {
   return (
     <tr>
       {cells.map((cell, index) => (
