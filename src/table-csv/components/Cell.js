@@ -1,11 +1,24 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { ContentContext } from '../contexts'
 
-export default ({ header, value }) => {
+export default ({ header, value, rowIndex, colIndex }) => {
+  const [, dispatch] = useContext(ContentContext)
   const [content, setContent] = useState(value)
   const [editMode, setEditMode] = useState(false)
   const toggleMode = () => setEditMode(mode => !mode)
   const handleFocus = ref => ref && ref.focus()
   const handleChange = e => setContent(e.target.value)
+  const submitContent = () => {
+    dispatch({ type: 'UPDATE_CONTENT', content, rowIndex, colIndex })
+    toggleMode()
+  }
+  const handleKeyDown = e => {
+    if (e.key === 'Enter') return submitContent()
+    else if (e.key === 'Escape') {
+      toggleMode()
+      return setContent(value)
+    }
+  }
 
   return header ? (
     <th>
@@ -13,8 +26,9 @@ export default ({ header, value }) => {
         <input
           type="text"
           value={content}
-          onBlur={toggleMode}
+          onBlur={submitContent}
           onChange={handleChange}
+          onKeyDown={handleKeyDown}
           ref={handleFocus}
         />
       ) : (
@@ -27,8 +41,9 @@ export default ({ header, value }) => {
         <input
           type="text"
           value={content}
-          onBlur={toggleMode}
+          onBlur={submitContent}
           onChange={handleChange}
+          onKeyDown={handleKeyDown}
           ref={handleFocus}
         />
       ) : (
