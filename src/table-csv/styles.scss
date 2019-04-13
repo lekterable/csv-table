@@ -20,11 +20,26 @@
   }
   .table__cell {
     padding: 10px 20px;
-    height: 20px;
+    font-size: 16px;
     &--head {
       font-size: 18px;
       text-align: left;
       color: #fff;
+    }
+  }
+  .editable-field {
+    font-size: inherit;
+    color: inherit;
+    &--input {
+      padding: 0;
+      font-weight: inherit;
+      background-color: #ff0;
+      color: #00f;
+      font-family: inherit;
+      appearance: none;
+      border: none;
+      box-sizing: border-box;
+      outline: none;
     }
   }
 }

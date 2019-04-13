@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ContentContext, ModeContext } from '../contexts'
+import EditableField from './EditableField'
 
 export default ({ header, value, rowIndex, colIndex }) => {
   const { isEditable } = useContext(ModeContext)
@@ -30,33 +31,27 @@ export default ({ header, value, rowIndex, colIndex }) => {
 
   return header ? (
     <th className="table__cell table__cell--head">
-      {editMode ? (
-        <input
-          type="text"
-          value={content}
-          onBlur={submitContent}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          ref={handleFocus}
-        />
-      ) : (
-        <div onClick={toggleMode}>{content}</div>
-      )}
+      <EditableField
+        value={content}
+        submitContent={submitContent}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        onFocus={handleFocus}
+        toggleMode={toggleMode}
+        editMode={editMode}
+      />
     </th>
   ) : (
     <td className="table__cell">
-      {editMode ? (
-        <input
-          type="text"
-          value={content}
-          onBlur={submitContent}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          ref={handleFocus}
-        />
-      ) : (
-        <div onClick={toggleMode}>{content}</div>
-      )}
+      <EditableField
+        value={content}
+        submitContent={submitContent}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        onFocus={handleFocus}
+        toggleMode={toggleMode}
+        editMode={editMode}
+      />
     </td>
   )
 }
