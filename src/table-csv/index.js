@@ -5,6 +5,7 @@ import Toolbar from './components/Toolbar'
 import { ContentContext, ModeContext } from './contexts'
 import { useUniqueKeys } from './hooks'
 import reducer from './reducers'
+import './styles.scss'
 
 export default ({ data = [], editable, toolbar, exportable }) => {
   const uniqueKeys = useUniqueKeys(data.length)
@@ -15,14 +16,14 @@ export default ({ data = [], editable, toolbar, exportable }) => {
   return (
     <ModeContext.Provider value={{ isEditable: Boolean(editable) }}>
       <ContentContext.Provider value={[state, dispatch]}>
-        <div>
+        <div className="csv-table-wrapper">
           {toolbar && <Toolbar />}
           {exportable && <ExportButton data={state.content} />}
-          <table>
-            <thead>
+          <table className="csv-table">
+            <thead className="csv-table__header">
               <Row header cells={header} />
             </thead>
-            <tbody>
+            <tbody className="csv-table__body">
               {rows.map((row, index) => (
                 <Row
                   key={state.uniqueKeys[index + 1]}

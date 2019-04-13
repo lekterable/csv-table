@@ -29,7 +29,7 @@ export default ({ header, value, rowIndex, colIndex }) => {
   }, [value])
 
   return header ? (
-    <th>
+    <th className="table__cell table__cell--head">
       {editMode ? (
         <input
           type="text"
@@ -44,7 +44,7 @@ export default ({ header, value, rowIndex, colIndex }) => {
       )}
     </th>
   ) : (
-    <td>
+    <td className="table__cell">
       {editMode ? (
         <input
           type="text"

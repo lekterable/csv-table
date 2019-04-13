@@ -1,0 +1,30 @@
+.csv-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.csv-table {
+  border-collapse: collapse;
+  &__header {
+    background-color: #000;
+  }
+  &__body {
+    background-color: #dbdbdb;
+    .table__row + .table__row {
+      border-top: 2px #00f solid;
+    }
+    .table__row:nth-child(odd) {
+      background-color: #fff;
+    }
+  }
+  .table__cell {
+    padding: 10px 20px;
+    height: 20px;
+    &--head {
+      font-size: 18px;
+      text-align: left;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.csv-table-wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif; }
+
+.csv-table {
+  border-collapse: collapse; }
+  .csv-table__header {
+    background-color: #000; }
+    .csv-table__header th {
+      font-size: 18px;
+      text-align: left;
+      padding: 10px 20px;
+      color: #fff; }
+  .csv-table__body {
+    background-color: #dbdbdb; }
+    .csv-table__body td {
+      height: 20px;
+      padding: 10px 20px; }
+    .csv-table__body tr + tr {
+      border-top: 2px #00f solid; }
+    .csv-table__body tr:nth-child(odd) {
+      background-color: #fff; }
+
+
+/*# sourceMappingURL=main.css.map*/

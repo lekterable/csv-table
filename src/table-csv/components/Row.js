@@ -3,7 +3,7 @@ import Cell from './Cell'
 
 export default ({ header, cells = [], rowIndex }) => {
   return (
-    <tr>
+    <tr className="table__row">
       {cells.map((cell, index) => (
         <Cell
           key={index}
