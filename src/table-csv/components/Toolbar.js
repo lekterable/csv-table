@@ -11,11 +11,13 @@ export default () => {
     <div>
       <div>
         <input
+          className="button button--primary"
           type="button"
           value="Add Row"
           onClick={() => dispatch({ type: 'ADD_ROW', rowIndex: Number(row) })}
         />
         <input
+          className="button button--primary"
           type="button"
           value="Remove Row"
           onClick={() =>
@@ -32,6 +34,7 @@ export default () => {
       </div>
       <div>
         <input
+          className="button button--primary"
           type="button"
           value="Add Column"
           onClick={() =>
@@ -39,6 +42,7 @@ export default () => {
           }
         />
         <input
+          className="button button--primary"
           type="button"
           value="Remove Column"
           onClick={() =>

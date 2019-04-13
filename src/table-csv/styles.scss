@@ -1,18 +1,56 @@
+$button-width: 100px;
+$button-height: 25px;
+
 .csv-table-wrapper {
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  .button {
+    width: $button-width;
+    height: $button-height;
+    border: 0;
+    margin-bottom: 1px;
+    padding: 0;
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    outline: none;
+    &--primary {
+      color: #fff;
+      background-color: #00f;
+      &:hover {
+        color: #00f;
+        background-color: #ff0;
+      }
+    }
+    &--secondary {
+      color: #00f;
+      background-color: #ff0;
+      &:hover {
+        color: #fff;
+        background-color: #00f;
+      }
+    }
+  }
+  .button + .button {
+    margin-left: 1px;
+  }
+  .export-link {
+    margin-bottom: 1px;
+    width: $button-width;
+    height: $button-height;
+  }
 }
 
 .csv-table {
   border-collapse: collapse;
-  &__header {
+  &__header .table__cell {
     background-color: #000;
   }
   &__body {
-    background-color: #dbdbdb;
+    background-color: #ececec;
     .table__row + .table__row {
-      border-top: 2px #00f solid;
+      border-top: 1px #00f solid;
     }
     .table__row:nth-child(odd) {
       background-color: #fff;
@@ -20,14 +58,16 @@
   }
   .table__cell {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 14px;
     &--head {
-      font-size: 18px;
+      font-size: 16px;
       text-align: left;
       color: #fff;
     }
   }
   .editable-field {
+    min-height: 20px;
+    line-height: 20px;
     font-size: inherit;
     color: inherit;
     &--input {

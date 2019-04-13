@@ -4,25 +4,69 @@
   -webkit-flex-direction: column;
           flex-direction: column;
   font-family: Arial, Helvetica, sans-serif; }
+  .csv-table-wrapper .button {
+    width: 100px;
+    height: 25px;
+    border: 0;
+    margin-bottom: 1px;
+    padding: 0;
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    outline: none; }
+    .csv-table-wrapper .button--primary {
+      color: #fff;
+      background-color: #00f; }
+      .csv-table-wrapper .button--primary:hover {
+        color: #00f;
+        background-color: #ff0; }
+    .csv-table-wrapper .button--secondary {
+      color: #00f;
+      background-color: #ff0; }
+      .csv-table-wrapper .button--secondary:hover {
+        color: #fff;
+        background-color: #00f; }
+  .csv-table-wrapper .button + .button {
+    margin-left: 1px; }
+  .csv-table-wrapper .export-link {
+    margin-bottom: 1px;
+    width: 100px;
+    height: 25px; }
 
 .csv-table {
   border-collapse: collapse; }
-  .csv-table__header {
+  .csv-table__header .table__cell {
     background-color: #000; }
-    .csv-table__header th {
-      font-size: 18px;
-      text-align: left;
-      padding: 10px 20px;
-      color: #fff; }
   .csv-table__body {
-    background-color: #dbdbdb; }
-    .csv-table__body td {
-      height: 20px;
-      padding: 10px 20px; }
-    .csv-table__body tr + tr {
-      border-top: 2px #00f solid; }
-    .csv-table__body tr:nth-child(odd) {
+    background-color: #ececec; }
+    .csv-table__body .table__row + .table__row {
+      border-top: 1px #00f solid; }
+    .csv-table__body .table__row:nth-child(odd) {
       background-color: #fff; }
+  .csv-table .table__cell {
+    padding: 10px 20px;
+    font-size: 14px; }
+    .csv-table .table__cell--head {
+      font-size: 16px;
+      text-align: left;
+      color: #fff; }
+  .csv-table .editable-field {
+    min-height: 20px;
+    line-height: 20px;
+    font-size: inherit;
+    color: inherit; }
+    .csv-table .editable-field--input {
+      padding: 0;
+      font-weight: inherit;
+      background-color: #ff0;
+      color: #00f;
+      font-family: inherit;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      border: none;
+      box-sizing: border-box;
+      outline: none; }
 
 
 /*# sourceMappingURL=main.css.map*/
