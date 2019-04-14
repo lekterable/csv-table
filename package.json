@@ -14,6 +14,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:watch": "react-scripts test --watch",
+    "test:coverage": "react-scripts test --coverage --collectCoverageFrom='[\"src/table-csv/**.js\", \"!src/table-csv/contexts/**\"]'",
     "eject": "react-scripts eject",
     "storybook": "start-storybook",
     "storybook:build": "build-storybook -c .storybook -o docs"
@@ -28,6 +30,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@storybook/react": "^5.0.6"
+    "@storybook/react": "^5.0.6",
+    "react-test-renderer": "^16.8.6",
+    "react-testing-library": "^6.1.2"
   }
 }

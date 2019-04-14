@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditableField /> should match snapshot 1`] = `
+<div
+  className="editable-field"
+  data-testid="editable-field-display"
+>
+  
+</div>
+`;

@@ -23,7 +23,7 @@ export default ({ data = [], editable, toolbar, exportable }) => {
           </div>
           <table className="csv-table">
             <thead className="csv-table__header">
-              <Row header cells={header} />
+              {header && <Row header cells={header} />}
             </thead>
             <tbody className="csv-table__body">
               {rows.map((row, index) => (

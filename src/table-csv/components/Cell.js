@@ -11,7 +11,6 @@ export default ({ header, value, rowIndex, colIndex }) => {
     if (!isEditable) return
     setEditMode(mode => !mode)
   }
-  const handleFocus = ref => ref && ref.focus()
   const handleChange = e => setContent(e.target.value)
   const submitContent = () => {
     dispatch({ type: 'UPDATE_CONTENT', content, rowIndex, colIndex })
@@ -30,25 +29,26 @@ export default ({ header, value, rowIndex, colIndex }) => {
   }, [value])
 
   return header ? (
-    <th className="table__cell table__cell--head">
+    <th
+      data-testid="table-header-cell"
+      className="table__cell table__cell--head"
+    >
       <EditableField
         value={content}
         submitContent={submitContent}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        onFocus={handleFocus}
         toggleMode={toggleMode}
         editMode={editMode}
       />
     </th>
   ) : (
-    <td className="table__cell">
+    <td data-testid="table-cell" className="table__cell">
       <EditableField
         value={content}
         submitContent={submitContent}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        onFocus={handleFocus}
         toggleMode={toggleMode}
         editMode={editMode}
       />

@@ -1,27 +1,32 @@
 import React from 'react'
 
 export default ({
-  value,
+  value = '',
   submitContent,
   onChange,
   onKeyDown,
-  onFocus,
   toggleMode,
   editMode
 }) => {
   return editMode ? (
     <input
+      data-testid="editable-field-input"
       type="text"
       className="editable-field editable-field--input"
+      readOnly={!onChange}
       value={value}
       onBlur={submitContent}
       onChange={onChange}
       onKeyDown={onKeyDown}
-      ref={onFocus}
+      autoFocus
       size={value.length + 1}
     />
   ) : (
-    <div className="editable-field" onClick={toggleMode}>
+    <div
+      data-testid="editable-field-display"
+      className="editable-field"
+      onClick={toggleMode}
+    >
       {value}
     </div>
   )

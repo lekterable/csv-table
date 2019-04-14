@@ -8,15 +8,17 @@ export default () => {
   const [column, setColumn] = useState(1)
 
   return (
-    <div className="toolbar">
+    <div data-testid="toolbar" className="toolbar">
       <div className="toolbar__row">
         <input
+          data-testid="row-add"
           className="button button--primary"
           type="button"
           value="Add Row"
           onClick={() => dispatch({ type: 'ADD_ROW', rowIndex: Number(row) })}
         />
         <input
+          data-testid="row-remove"
           className="button button--primary"
           type="button"
           value="Remove Row"
@@ -25,6 +27,7 @@ export default () => {
           }
         />
         <input
+          data-testid="row-input"
           className="input-number"
           type="number"
           value={row}
@@ -35,6 +38,7 @@ export default () => {
       </div>
       <div className="toolbar__row">
         <input
+          data-testid="column-add"
           className="button button--primary"
           type="button"
           value="Add Column"
@@ -43,6 +47,7 @@ export default () => {
           }
         />
         <input
+          data-testid="column-remove"
           className="button button--primary"
           type="button"
           value="Remove Column"
@@ -51,11 +56,12 @@ export default () => {
           }
         />
         <input
+          data-testid="column-input"
           className="input-number"
           type="number"
           value={column}
           min="1"
-          max={header.length + 1}
+          max={header ? header.length + 1 : 1}
           onChange={e => setColumn(e.target.value)}
         />
       </div>

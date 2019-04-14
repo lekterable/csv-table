@@ -3,7 +3,10 @@ import Cell from './Cell'
 
 export default ({ header, cells = [], rowIndex }) => {
   return (
-    <tr className="table__row">
+    <tr
+      data-testid={header ? 'table-header-row' : 'table-row'}
+      className="table__row"
+    >
       {cells.map((cell, index) => (
         <Cell
           key={index}

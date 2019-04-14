@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`table-csv should match snapshot 1`] = `
+<div
+  className="csv-table-wrapper"
+>
+  <div
+    className="features"
+  />
+  <table
+    className="csv-table"
+  >
+    <thead
+      className="csv-table__header"
+    />
+    <tbody
+      className="csv-table__body"
+    />
+  </table>
+</div>
+`;
+
+exports[`table-csv should match snapshot with data 1`] = `
+<div
+  className="csv-table-wrapper"
+>
+  <div
+    className="features"
+  />
+  <table
+    className="csv-table"
+  >
+    <thead
+      className="csv-table__header"
+    >
+      <tr
+        className="table__row"
+        data-testid="table-header-row"
+      >
+        <th
+          className="table__cell table__cell--head"
+          data-testid="table-header-cell"
+        >
+          <div
+            className="editable-field"
+            data-testid="editable-field-display"
+            onClick={[Function]}
+          >
+            Header 1
+          </div>
+        </th>
+        <th
+          className="table__cell table__cell--head"
+          data-testid="table-header-cell"
+        >
+          <div
+            className="editable-field"
+            data-testid="editable-field-display"
+            onClick={[Function]}
+          >
+            Header 2
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="csv-table__body"
+    >
+      <tr
+        className="table__row"
+        data-testid="table-row"
+      >
+        <td
+          className="table__cell"
+          data-testid="table-cell"
+        >
+          <div
+            className="editable-field"
+            data-testid="editable-field-display"
+            onClick={[Function]}
+          >
+            Value 1
+          </div>
+        </td>
+        <td
+          className="table__cell"
+          data-testid="table-cell"
+        >
+          <div
+            className="editable-field"
+            data-testid="editable-field-display"
+            onClick={[Function]}
+          >
+            Value 2
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
