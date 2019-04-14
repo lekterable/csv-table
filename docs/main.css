@@ -4,34 +4,58 @@
   -webkit-flex-direction: column;
           flex-direction: column;
   font-family: Arial, Helvetica, sans-serif; }
+  .csv-table-wrapper .features {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-end;
+            align-items: flex-end;
+    -webkit-justify-content: space-between;
+            justify-content: space-between; }
   .csv-table-wrapper .button {
     width: 100px;
     height: 25px;
     border: 0;
-    margin-bottom: 1px;
     padding: 0;
     font-size: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
-    outline: none; }
+    outline: none;
+    cursor: pointer; }
     .csv-table-wrapper .button--primary {
       color: #fff;
       background-color: #00f; }
-      .csv-table-wrapper .button--primary:hover {
+      .csv-table-wrapper .button--primary:hover, .csv-table-wrapper .button--primary:focus {
         color: #00f;
         background-color: #ff0; }
     .csv-table-wrapper .button--secondary {
       color: #00f;
       background-color: #ff0; }
-      .csv-table-wrapper .button--secondary:hover {
+      .csv-table-wrapper .button--secondary:hover, .csv-table-wrapper .button--secondary:focus {
         color: #fff;
         background-color: #00f; }
+  .csv-table-wrapper .toolbar__row {
+    display: -webkit-flex;
+    display: flex;
+    margin-bottom: 1px; }
   .csv-table-wrapper .button + .button {
     margin-left: 1px; }
   .csv-table-wrapper .export-link {
-    margin-bottom: 1px;
     width: 100px;
-    height: 25px; }
+    height: 25px;
+    outline: none;
+    margin-bottom: 1px;
+    margin-left: auto; }
+  .csv-table-wrapper .input-number {
+    height: 25px;
+    outline: none;
+    padding-left: 5px;
+    color: #000;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 1px #000 solid; }
+    .csv-table-wrapper .input-number::-webkit-inner-spin-button {
+      width: 20px;
+      height: 25px; }
 
 .csv-table {
   border-collapse: collapse; }

@@ -5,20 +5,26 @@ $button-height: 25px;
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  .features {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
   .button {
     width: $button-width;
     height: $button-height;
     border: 0;
-    margin-bottom: 1px;
     padding: 0;
     font-size: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
     outline: none;
+    cursor: pointer;
     &--primary {
       color: #fff;
       background-color: #00f;
-      &:hover {
+      &:hover,
+      &:focus {
         color: #00f;
         background-color: #ff0;
       }
@@ -26,19 +32,39 @@ $button-height: 25px;
     &--secondary {
       color: #00f;
       background-color: #ff0;
-      &:hover {
+      &:hover,
+      &:focus {
         color: #fff;
         background-color: #00f;
       }
     }
   }
+  .toolbar__row {
+    display: flex;
+    margin-bottom: 1px;
+  }
   .button + .button {
     margin-left: 1px;
   }
   .export-link {
-    margin-bottom: 1px;
     width: $button-width;
     height: $button-height;
+    outline: none;
+    margin-bottom: 1px;
+    margin-left: auto;
+  }
+  .input-number {
+    height: $button-height;
+    outline: none;
+    padding-left: 5px;
+    color: #000;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 1px #000 solid;
+    &::-webkit-inner-spin-button {
+      width: 20px;
+      height: 25px;
+    }
   }
 }
 

@@ -17,8 +17,10 @@ export default ({ data = [], editable, toolbar, exportable }) => {
     <ModeContext.Provider value={{ isEditable: Boolean(editable) }}>
       <ContentContext.Provider value={[state, dispatch]}>
         <div className="csv-table-wrapper">
-          {toolbar && <Toolbar />}
-          {exportable && <ExportButton data={state.content} />}
+          <div className="features">
+            {toolbar && <Toolbar />}
+            {exportable && <ExportButton data={state.content} />}
+          </div>
           <table className="csv-table">
             <thead className="csv-table__header">
               <Row header cells={header} />

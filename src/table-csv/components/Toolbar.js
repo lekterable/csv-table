@@ -8,8 +8,8 @@ export default () => {
   const [column, setColumn] = useState(1)
 
   return (
-    <div>
-      <div>
+    <div className="toolbar">
+      <div className="toolbar__row">
         <input
           className="button button--primary"
           type="button"
@@ -25,6 +25,7 @@ export default () => {
           }
         />
         <input
+          className="input-number"
           type="number"
           value={row}
           min="1"
@@ -32,7 +33,7 @@ export default () => {
           onChange={e => setRow(e.target.value)}
         />
       </div>
-      <div>
+      <div className="toolbar__row">
         <input
           className="button button--primary"
           type="button"
@@ -50,6 +51,7 @@ export default () => {
           }
         />
         <input
+          className="input-number"
           type="number"
           value={column}
           min="1"

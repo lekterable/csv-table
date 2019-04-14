@@ -15,3 +15,6 @@ storiesOf('Table', module)
   .add('editable', () => <Table data={exampleData} editable />)
   .add('with toolbar', () => <Table data={exampleData} toolbar />)
   .add('exportable', () => <Table data={exampleData} exportable />)
+  .add('all features', () => (
+    <Table data={exampleData} editable toolbar exportable />
+  ))
