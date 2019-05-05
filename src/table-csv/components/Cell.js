@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { updateContent } from '../actions'
 import { ContentContext, ModeContext } from '../contexts'
 import EditableField from './EditableField'
 
@@ -13,7 +14,7 @@ export default ({ header, value, rowIndex, colIndex }) => {
   }
   const handleChange = e => setContent(e.target.value)
   const submitContent = () => {
-    dispatch({ type: 'UPDATE_CONTENT', content, rowIndex, colIndex })
+    dispatch(updateContent(content, rowIndex, colIndex))
     toggleMode()
   }
   const handleKeyDown = e => {

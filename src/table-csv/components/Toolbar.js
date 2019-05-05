@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { addColumn, addRow, removeColumn, removeRow } from '../actions'
 import { ContentContext } from '../contexts'
 
 export default () => {
@@ -15,16 +16,14 @@ export default () => {
           className="button button--primary"
           type="button"
           value="Add Row"
-          onClick={() => dispatch({ type: 'ADD_ROW', rowIndex: Number(row) })}
+          onClick={() => dispatch(addRow(Number(row)))}
         />
         <input
           data-testid="row-remove"
           className="button button--primary"
           type="button"
           value="Remove Row"
-          onClick={() =>
-            dispatch({ type: 'REMOVE_ROW', rowIndex: Number(row) })
-          }
+          onClick={() => dispatch(removeRow(Number(row)))}
         />
         <input
           data-testid="row-input"
@@ -42,18 +41,14 @@ export default () => {
           className="button button--primary"
           type="button"
           value="Add Column"
-          onClick={() =>
-            dispatch({ type: 'ADD_COLUMN', colIndex: Number(column) })
-          }
+          onClick={() => dispatch(addColumn(Number(column)))}
         />
         <input
           data-testid="column-remove"
           className="button button--primary"
           type="button"
           value="Remove Column"
-          onClick={() =>
-            dispatch({ type: 'REMOVE_COLUMN', colIndex: Number(column) })
-          }
+          onClick={() => dispatch(removeColumn(Number(column)))}
         />
         <input
           data-testid="column-input"
